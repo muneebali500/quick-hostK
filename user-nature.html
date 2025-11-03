@@ -173,9 +173,9 @@
         <div class="hero-ellipse-2"></div>
       </section>
 
-      <section id="user-profile" class="section-padding">
+      <section id="orderCard-section" class="section-padding">
         <div class="main-container">
-          <div class="row g-5">
+          <div class="row g-4">
             <div class="col-md-5 col-lg-3">
               <div
                 class="user-profile-sidebar p-3 rounded-4 shadow-1 sidebar"
@@ -186,8 +186,8 @@
                 <div class="d-flex flex-column h-100">
                   <div class="flex-grow-1">
                     <a
-                      href="user-profile-1.html"
-                      class="active d-flex gap-2 rounded-3 mb-2 align-items-center p-3"
+                      href="user-info.html"
+                      class="d-flex gap-2 rounded-3 mb-2 align-items-center p-3"
                       aria-current="true"
                     >
                       <i class="fas fa-user me-2"></i>
@@ -195,8 +195,8 @@
                     </a>
 
                     <a
-                      href="user-profile-2.html"
-                      class="d-flex gap-2 rounded-3 mb-2 align-items-center p-3"
+                      href="user-nature.html"
+                      class="active d-flex gap-2 rounded-3 mb-2 align-items-center p-3"
                     >
                       <i class="fas fa-file-alt me-2"></i>
                       طباعتي
@@ -214,89 +214,273 @@
                 </div>
               </div>
             </div>
+
             <div class="col-md-7 col-lg-9">
-              <div>
-                <h4
-                  class="fw-semibold mb-4"
-                  data-animate="fadeInDown"
-                  data-animate-delay="200"
+              <ul
+                class="nav nav-pills mb-4 gap-4"
+                id="orderTab"
+                role="tablist"
+                data-animate="fadeIn"
+                data-animate-delay="600"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="flights-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#flights"
+                    type="button"
+                    role="tab"
+                    aria-controls="flights"
+                    aria-selected="true"
+                  >
+                    قيد الانتظار
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="hotels-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#hotels"
+                    type="button"
+                    role="tab"
+                    aria-controls="hotels"
+                    aria-selected="false"
+                  >
+                    مكتملة
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="orderTabContent">
+                <!-- Pending Orders Tab -->
+                <div
+                  class="tab-pane fade show active"
+                  id="flights"
+                  role="tabpanel"
+                  aria-labelledby="flights-tab"
                 >
-                  المعلومات الشخصية
-                </h4>
-                <figure
-                  class="rounded-circle overflow-hidden mb-5"
-                  style="height: 6rem; width: 6rem"
-                  data-animate="fadeInUp"
-                  data-animate-delay="250"
-                >
-                  <img
-                    src="assets/images/pic-19.png"
-                    alt="Pic"
-                    loading="lazy"
-                    class="cover"
-                  />
-                </figure>
-                <h5
-                  class="fw-semibold mb-4"
-                  data-animate="fadeIn"
-                  data-animate-delay="350"
-                >
-                  المعلومات الاساسية
-                </h5>
-                <form
-                  class="row g-4"
-                  data-animate="fadeInUp"
-                  data-animate-delay="350"
-                >
-                  <div class="col-md-6">
-                    <label for="inputName" class="fs-6 fw-semibold mb-2"
-                      >الاسم *</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="inputName"
-                      placeholder="اكتب اسمك هنا"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="inputAge" class="fs-6 fw-semibold mb-2"
-                      >المدينة *</label
-                    >
-                    <select class="">
-                      <option value="اختر مدينتك">اختر مدينتك</option>
-                    </select>
+                  <div
+                    class="order-card shadow-sm mb-4"
+                    data-animate="fadeInUp"
+                    data-animate-delay="200"
+                  >
+                    <div class="row align-items-center mb-3">
+                      <div class="col-lg-6">
+                        <p class="mb-1 text-muted" style="font-size: 0.9rem">
+                          رقم الطلب
+                        </p>
+                        <h4 class="fw-semibold">CTH - 89812</h4>
+                      </div>
+                      <div class="col-lg-6 text-lg-start">
+                        <span class="text-muted ms-3" style="font-size: 0.95rem"
+                          >12 أغسطس 2025</span
+                        >
+                        <span class="status-badge">
+                          <span class="status-dot"></span>
+                          قيد الانتظار
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <div class="col-12 text-muted" style="font-size: 0.9rem">
+                        <i class="fa-solid fa-location-dot"></i>
+                        23 طه حسين النزهة الجديدة - القاهرة الدور الخامس
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-0">
+                      <div class="col-lg-6">
+                        <div
+                          class="service-details d-flex align-items-center g-3"
+                        >
+                          <img
+                            src="assets/images/pic-16.png"
+                            alt="Service Icon"
+                            loading="lazy"
+                          />
+                          <span class="fw-semibold">خدمة غسيل الملابس</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 text-lg-start mt-lg-0 mt-3">
+                        <button class="btn btn-cancel">إلغاء الحجز</button>
+                      </div>
+                    </div>
+
+                    <div class="total-section mt-4">
+                      الإجمالي: 250.00 جنيهاً
+                    </div>
                   </div>
 
-                  <div class="col-md-6">
-                    <label class="fs-6 fw-semibold mb-2"
-                      >البريد الالكتروني *</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Seifhossam62@gmail.com"
-                      required
-                    />
+                  <div
+                    class="order-card shadow-sm"
+                    data-animate="fadeInUp"
+                    data-animate-delay="300"
+                  >
+                    <div class="row align-items-center mb-3">
+                      <div class="col-lg-6">
+                        <p class="mb-1 text-muted" style="font-size: 0.9rem">
+                          رقم الطلب
+                        </p>
+                        <h4 class="fw-semibold">CTH - 89813</h4>
+                      </div>
+                      <div class="col-lg-6 text-lg-start">
+                        <span class="text-muted ms-3" style="font-size: 0.95rem"
+                          >15 أغسطس 2025</span
+                        >
+                        <span class="status-badge">
+                          <span class="status-dot"></span>
+                          قيد الانتظار
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <div class="col-12 text-muted" style="font-size: 0.9rem">
+                        <i class="fa-solid fa-location-dot"></i>
+                        45 شارع الجمهورية - الإسكندرية الدور الثالث
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-0">
+                      <div class="col-lg-6">
+                        <div
+                          class="service-details d-flex align-items-center g-3"
+                        >
+                          <img
+                            src="assets/images/pic-16.png"
+                            alt="Service Icon"
+                            loading="lazy"
+                          />
+                          <span class="fw-semibold">خدمة تنظيف المنزل</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 text-lg-start mt-lg-0 mt-3">
+                        <button class="btn btn-cancel">إلغاء الحجز</button>
+                      </div>
+                    </div>
+
+                    <div class="total-section mt-4">
+                      الإجمالي: 450.00 جنيهاً
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Completed Orders Tab -->
+                <div
+                  class="tab-pane fade"
+                  id="hotels"
+                  role="tabpanel"
+                  aria-labelledby="hotels-tab"
+                >
+                  <div
+                    class="order-card shadow-sm mb-4"
+                    data-animate="fadeInUp"
+                    data-animate-delay="200"
+                  >
+                    <div class="row align-items-center mb-3">
+                      <div class="col-lg-6">
+                        <p class="mb-1 text-muted" style="font-size: 0.9rem">
+                          رقم الطلب
+                        </p>
+                        <h4 class="fw-semibold">CTH - 89745</h4>
+                      </div>
+                      <div class="col-lg-6 text-lg-start">
+                        <span class="text-muted ms-3" style="font-size: 0.95rem"
+                          >5 أغسطس 2025</span
+                        >
+                        <span class="status-badge completed">
+                          <span class="status-dot completed"></span>
+                          مكتملة
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <div class="col-12 text-muted" style="font-size: 0.9rem">
+                        <i class="fa-solid fa-location-dot"></i>
+                        78 شارع مصطفى النحاس - مدينة نصر القاهرة
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-0">
+                      <div class="col-lg-6">
+                        <div
+                          class="service-details d-flex align-items-center g-3"
+                        >
+                          <img
+                            src="assets/images/pic-16.png"
+                            alt="Service Icon"
+                            loading="lazy"
+                          />
+                          <span class="fw-semibold">خدمة صيانة الأجهزة</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 text-lg-start mt-lg-0 mt-3">
+                        <button class="btn btn-reorder">إعادة الطلب</button>
+                      </div>
+                    </div>
+
+                    <div class="total-section mt-4">
+                      الإجمالي: 350.00 جنيهاً
+                    </div>
                   </div>
 
-                  <div class="col-md-6">
-                    <label class="fs-6 fw-semibold mb-2">كلمة السر *</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      placeholder="***********"
-                      required
-                    />
-                  </div>
+                  <div
+                    class="order-card shadow-sm"
+                    data-animate="fadeInUp"
+                    data-animate-delay="300"
+                  >
+                    <div class="row align-items-center mb-3">
+                      <div class="col-lg-6">
+                        <p class="mb-1 text-muted" style="font-size: 0.9rem">
+                          رقم الطلب
+                        </p>
+                        <h4 class="fw-semibold">CTH - 89620</h4>
+                      </div>
+                      <div class="col-lg-6 text-lg-start">
+                        <span class="text-muted ms-3" style="font-size: 0.95rem"
+                          >28 يوليو 2025</span
+                        >
+                        <span class="status-badge completed">
+                          <span class="status-dot completed"></span>
+                          مكتملة
+                        </span>
+                      </div>
+                    </div>
 
-                  <div class="col-12 mt-5">
-                    <button type="submit" class="button primary-btn">
-                      حفظ التغييرات
-                    </button>
+                    <div class="row mb-4">
+                      <div class="col-12 text-muted" style="font-size: 0.9rem">
+                        <i class="fa-solid fa-location-dot"></i>
+                        12 شارع الهرم - الجيزة الدور الثاني
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-0">
+                      <div class="col-lg-6">
+                        <div
+                          class="service-details d-flex align-items-center g-3"
+                        >
+                          <img
+                            src="assets/images/pic-16.png"
+                            alt="Service Icon"
+                            loading="lazy"
+                          />
+                          <span class="fw-semibold">خدمة توصيل الطعام</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 text-lg-start mt-lg-0 mt-3">
+                        <button class="btn btn-reorder">إعادة الطلب</button>
+                      </div>
+                    </div>
+
+                    <div class="total-section mt-4">
+                      الإجمالي: 180.00 جنيهاً
+                    </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -397,7 +581,7 @@
                   >
                 </li>
                 <li>
-                  <a href="user-profile-1.html"
+                  <a href="user-info.html"
                     ><span class="ms-2"
                       ><img
                         src="assets/images/two-arrow.svg"
