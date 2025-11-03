@@ -63,6 +63,9 @@
     min-height: 20rem;
     padding-top: 3rem;
   }
+  #hero-common .content-wrap {
+    margin-top: 3rem;
+  }
 }
 
 /*///////////////// COMPONENTS /////////////////*/
@@ -108,10 +111,6 @@
 }
 
 /* ///////////////// COMMON SECTIONS //////////////// */
-#pricing-home .pricing-toggle {
-  margin-bottom: 3rem;
-}
-
 #pricing-home .toggle-buttons {
   background-color: white;
   border-radius: var(--rounded-24);
