@@ -5,7 +5,7 @@
 
 .full-height-card {
   background: linear-gradient(to bottom, #009fd9, #ffffff);
-  min-height: 500px;
+  min-height: 480px;
   border-radius: var(--rounded-30);
   position: relative;
 }

@@ -117,6 +117,7 @@ section {
   font-weight: 600;
   color: #1c1c1c;
   line-height: 1.5;
+  max-width: 540px;
 }
 
 .section-heading {
@@ -144,11 +145,11 @@ button {
   border: none;
   outline: none;
   white-space: nowrap;
-  padding: 15px 34px;
-  border-radius: var(--rounded-30);
+  padding: 14px 30px;
+  border-radius: var(--rounded-24);
   overflow: hidden;
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
   transition: var(--transition-base);

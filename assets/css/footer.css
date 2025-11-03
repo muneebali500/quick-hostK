@@ -8,7 +8,7 @@ footer {
 footer li a {
   color: var(--clr-gray-2);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 15px;
   padding: 0.2rem 0;
   display: flex;
   transition: 0.3s linear;
@@ -26,7 +26,7 @@ footer li a:hover {
 footer .nav-title {
   color: var(--clr-black-2);
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin-bottom: 1.8rem;
   position: relative;
 }
