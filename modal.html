@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كويك - تواصل معنا</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <button
+          type="button"
+          class="button primary-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#successModal"
+        >
+          Open Success Modal
+        </button>
+
+        <div
+          class="modal fade"
+          id="successModal"
+          tabindex="-1"
+          aria-labelledby="successModalLabel"
+          aria-hidden="false"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center rounded-4">
+              <button
+                type="button"
+                class="btn-close m-3 fs-6 p-2 rounded-16"
+                data-bs-dismiss="modal"
+                style="
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  z-index: 10;
+                  background-color: #898a8d33;
+                "
+              ></button>
+
+              <div class="modal-body p-4">
+                <div class="mb-4" style="font-size: 4rem; color: #efefefad">
+                  <div
+                    class="d-inline-flex justify-content-center align-items-center rounded-circle"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      border: 10px solid #efefefad;
+                      background-color: var(--clr-primary);
+                    "
+                  >
+                    <i
+                      class="fa-solid fa-check"
+                      style="font-size: 2.5rem; color: #00b0ff"
+                    ></i>
+                  </div>
+                </div>
+
+                <h3
+                  class="mb-4 fs-3 fw-semibold clr-black-3"
+                  id="successModalLabel"
+                >
+                  تم طلب الخدمة بنجاح
+                </h3>
+
+                <div class="mb-3 d-flex justify-content-center">
+                  <img
+                    src="assets/images/pic-16.png"
+                    alt="Service Icon"
+                    class="rounded-circle border border-5 border-white shadow-sm"
+                    style="width: 80px; height: 80px"
+                  />
+                </div>
+
+                <div class="mb-4">
+                  <h5 class="fw-semibold mb-4">حجز خدمة غسيل للملابس</h5>
+                  <div
+                    class="d-flex justify-content-center align-items-center gap-4"
+                  >
+                    <p class="d-flex align-items-center gap-2 clr-black-3 mb-0">
+                      <i class="fa-regular fa-calendar-days clr-gray-2"></i>
+                      الاثنين، 12 أكتوبر
+                    </p>
+                    <p class="d-flex align-items-center gap-2 clr-black-3 mb-0">
+                      <i class="fa-regular fa-clock clr-gray-2"></i> 10:20 صباحا
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="button primary-btn w-100 p-2 rounded-pill"
+                >
+                  إدارة الحجز
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

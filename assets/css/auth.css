@@ -1,0 +1,80 @@
+#login-section .content {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#login-section .left-section {
+  background-color: #00b8fb1a;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Right Section - Login Form */
+#login-section .right-section {
+  background: #ffffff;
+  padding: 2rem;
+  height: 100%;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forgot-password {
+  color: var(--clr-gray-1);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .login-section .content {
+    flex-direction: column;
+  }
+
+  .left-section {
+    height: 50vh;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .right-section {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .welcome-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 479px) {
+  .login-container {
+    max-width: 100%;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+}

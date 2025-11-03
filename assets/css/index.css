@@ -1,0 +1,43 @@
+#hero-home {
+  padding: 12rem 0 5rem;
+  background: linear-gradient(90deg, #ffffff, #95c6e91a, #367fa91a);
+}
+
+.full-height-card {
+  background: linear-gradient(to bottom, #009fd9, #ffffff);
+  min-height: 500px;
+  border-radius: var(--rounded-30);
+  position: relative;
+}
+#hero-home .half-height-card {
+  border-radius: var(--rounded-30);
+  box-shadow: var(--drop-shadow-2) !important;
+  overflow: hidden;
+  position: relative;
+}
+#hero-home .image-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#hero-home .rating-star-badge {
+  background-color: #ffffff;
+  box-shadow: 0 0 29px #b9b9b940;
+  color: #f57005;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
