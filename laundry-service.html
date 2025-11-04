@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>كويك - خدمة غسيل الملابس</title>
 
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/company-logo.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/company-logo.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/company-logo.svg"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -231,27 +249,35 @@
                     اختر اليوم و الساعة :
                   </h3>
 
-                  <div class="d-flex gap-3 align-items-center">
+                  <div class="d-flex gap-3 align-items-center dates-picker">
                     <ul class="d-flex gap-2" style="font-size: 14px">
-                      <li class="border py-3 px-2 rounded-16 text-center">
-                        <span class="d-block clr-gray-2 mb-1">الاثنين</span>
-                        <span class="d-block fw-medium">12 نوفمبر</span>
-                      </li>
-                      <li class="border py-3 px-2 rounded-16 text-center">
-                        <span class="d-block clr-gray-2 mb-1">الاثنين</span>
-                        <span class="d-block fw-medium">12 نوفمبر</span>
-                      </li>
                       <li
-                        class="d-none d-sm-block border py-3 px-2 rounded-16 text-center"
+                        class="border py-3 px-2 rounded-16 text-center active-date"
+                        data-date="2024-11-12"
                       >
                         <span class="d-block clr-gray-2 mb-1">الاثنين</span>
                         <span class="d-block fw-medium">12 نوفمبر</span>
                       </li>
                       <li
-                        class="d-none d-sm-block border py-3 px-2 rounded-16 text-center"
+                        class="border py-3 px-2 rounded-16 text-center"
+                        data-date="2024-11-13"
                       >
-                        <span class="d-block clr-gray-2 mb-1">الاثنين</span>
-                        <span class="d-block fw-medium">12 نوفمبر</span>
+                        <span class="d-block clr-gray-2 mb-1">الثلاثاء</span>
+                        <span class="d-block fw-medium">13 نوفمبر</span>
+                      </li>
+                      <li
+                        class="d-none d-sm-block border py-3 px-2 rounded-16 text-center"
+                        data-date="2024-11-14"
+                      >
+                        <span class="d-block clr-gray-2 mb-1">الأربعاء</span>
+                        <span class="d-block fw-medium">14 نوفمبر</span>
+                      </li>
+                      <li
+                        class="d-none d-sm-block border py-3 px-2 rounded-16 text-center"
+                        data-date="2024-11-15"
+                      >
+                        <span class="d-block clr-gray-2 mb-1">الخميس</span>
+                        <span class="d-block fw-medium">15 نوفمبر</span>
                       </li>
                     </ul>
 
@@ -586,5 +612,23 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateItems = document.querySelectorAll("li[data-date]");
+
+        dateItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            dateItems.forEach((i) => i.classList.remove("active-date"));
+
+            this.classList.add("active-date");
+
+            const selectedDate = this.getAttribute("data-date");
+
+            console.log("Selected date:", selectedDate);
+            // loadDataForDate(selectedDate);
+          });
+        });
+      });
+    </script>
   </body>
 </html>

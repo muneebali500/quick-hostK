@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كويك - لوحة التحكم</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/company-logo.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/company-logo.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/company-logo.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard/dashb.css" />
+  </head>
+  <body>
+    <nav class="sidebar">
+      <button class="sidebar-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <header class="sidebar-header p-4 d-flex align-items-center">
+        <a href="../index.html" class="d-flex align-items-center gap-2 mb-5">
+          <figure style="width: 80px">
+            <img
+              src="../assets/images/company-logo.svg"
+              alt="شعار الشركة"
+              loading="lazy"
+            />
+          </figure>
+          <span class="fs-5 fw-semibold clr-primary">كويك</span>
+        </a>
+      </header>
+      <ul class="nav flex-column sidebar-nav">
+        <li class="nav-item has-submenu d-block d-lg-none">
+          <a
+            class="nav-link d-flex align-items-center justify-content-between"
+            href="#"
+            data-submenu="user"
+          >
+            <span><i class="fas fa-user-circle"></i> المستخدم</span>
+            <i class="fas fa-chevron-down submenu-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="fas fa-user"></i>
+                الملف الشخصي
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="fas fa-cog"></i>
+                الإعدادات
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex align-items-center active"
+            href="control-panel.html"
+          >
+            <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="requests.html">
+            <i class="fas fa-clipboard-list"></i> الطلبـــات
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex align-items-center"
+            href="services-prices.html"
+          >
+            <i class="fas fa-handshake"></i> الخدمات والاسعـــار
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="customers.html">
+            <i class="fas fa-users"></i> العملاء
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex align-items-center"
+            href="offers-coupons.html"
+          >
+            <i class="fas fa-gift"></i> العروض و الكويونات
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex align-items-center"
+            href="payments-billing.html"
+          >
+            <i class="fas fa-file-invoice-dollar"></i> ادارة الدفـع و
+            الفواتيـــر
+          </a>
+        </li>
+      </ul>
+
+      <button class="logout-btn">
+        <i class="fas fa-sign-out-alt ms-2"></i>
+        تسجيل الخروج
+      </button>
+    </nav>
+
+    <main id="dashb-main">
+      <header id="dashb-header">
+        <div class="content p-3 px-md-4">
+          <div class="row">
+            <div class="col-8 d-none d-md-block">
+              <div class="d-flex gap-4 input-wrap">
+                <div class="position-relative input-search">
+                  <i class="fa-solid fa-magnifying-glass icon"></i>
+                  <input
+                    type="text"
+                    placeholder="ابحث عن ما تريد"
+                    class="form-control"
+                  />
+                </div>
+                <div class="position-relative">
+                  <input type="date" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="user-wrap d-flex justify-content-end align-items-center gap-3 col-md-4 col-5"
+            >
+              <div class="bell-icon">
+                <i class="fa-solid fa-bell fs-5"></i>
+                <span class="notification-icon"></span>
+              </div>
+              <figure class="user-pic">
+                <img
+                  class="cover"
+                  src="../assets/images/pic-17.png"
+                  alt="صورة المستخدم"
+                  loading="lazy"
+                />
+              </figure>
+              <button
+                class="btn btn-outline-dark d-md-none me-3 mobile-toggle"
+                style="display: none"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="d-none d-lg-block">
+                <h3 class="user-name mb-0 fs-5">اسم العميل</h3>
+                <p class="user-occupation mb-0 fs-6 clr-text">اسم النطاق</p>
+              </div>
+
+              <div class="dropdown ms-3 d-none d-lg-block">
+                <i
+                  class="fas fa-angle-down"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="cursor: pointer; font-size: 16px"
+                ></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a class="dropdown-item fs-6" href="#">الملف الشخصي</a>
+                  </li>
+                  <li><a class="dropdown-item fs-6" href="#">الإعدادات</a></li>
+                  <li>
+                    <a class="dropdown-item fs-6" href="#">تسجيل الخروج</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="p-3 mt-4 px-md-4"
+        data-animate="fadeInUp"
+        data-animate-delay="100"
+      >
+        <h3>مرحبا سيف ! 👋</h3>
+      </div>
+
+      <section id="services-counter" class="p-3 px-md-4">
+        <div class="content">
+          <ul class="services-list row g-4">
+            <li class="col-md-4" data-animate="fadeInUp">
+              <a href="products.html" class="service-item">
+                <span class="service-icon"
+                  ><i class="fas fa-money-bill-wave"></i
+                ></span>
+                <div class="service-info">
+                  <span class="service-name">ايرادات اليوم</span>
+                  <span class="counter">30.000</span>
+                </div>
+              </a>
+            </li>
+
+            <li
+              class="col-md-4"
+              data-animate="fadeInUp"
+              data-animate-delay="200"
+            >
+              <a href="domains.html" class="service-item">
+                <span class="service-icon"
+                  ><i class="fas fa-shopping-cart"></i
+                ></span>
+                <div class="service-info">
+                  <span class="service-name">عدد الطلبات</span>
+                  <span class="counter">218</span>
+                </div>
+              </a>
+            </li>
+
+            <li
+              class="col-md-4"
+              data-animate="fadeInUp"
+              data-animate-delay="300"
+            >
+              <a href="invoices.html" class="service-item">
+                <span class="service-icon"><i class="fas fa-users"></i></span>
+                <div class="service-info">
+                  <span class="service-name">عدد المستخدمين</span>
+                  <span class="counter">218</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="charts" class="p-3 px-md-4 mb-3">
+        <div class="row">
+          <div
+            class="col-lg-6"
+            data-animate="fadeInRight"
+            data-animate-delay="400"
+          >
+            <div class="chart-card h-100">
+              <div class="chart-header">
+                <h5 class="chart-title">تحليلات المبيعات والعملاء</h5>
+                <div class="dropdown" id="salesDropdown">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <span id="salesPeriodLabel">الشهر</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M3 4.5L6 7.5L9 4.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item sales-period-item"
+                        href="#"
+                        data-period="month"
+                        >الشهر</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item sales-period-item"
+                        href="#"
+                        data-period="quarter"
+                        >الربع السنوي</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item sales-period-item"
+                        href="#"
+                        data-period="year"
+                        >السنة</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex gap-3 mb-2">
+                <span class="data-label">المبيعات</span>
+                <span class="data-label data-label-green">العملاء</span>
+              </div>
+              <canvas id="salesBarChart"></canvas>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6"
+            data-animate="fadeInLeft"
+            data-animate-delay="400"
+          >
+            <div class="chart-card h-100">
+              <div class="chart-header">
+                <h5 class="chart-title">تحليلات الدخل</h5>
+                <div class="dropdown" id="incomeDropdown">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <span id="incomePeriodLabel">السنة</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M3 4.5L6 7.5L9 4.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item income-period-item"
+                        href="#"
+                        data-period="yearly"
+                        >السنة</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item income-period-item"
+                        href="#"
+                        data-period="quarterly"
+                        >الربع السنوي</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item income-period-item"
+                        href="#"
+                        data-period="monthly"
+                        >الشهر</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="data-label"
+                style="visibility: hidden"
+                id="incomeValue"
+              >
+                43,145.24 EGB
+              </div>
+              <canvas id="incomeLineChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-3 px-md-4">
+        <div class="row g-3">
+          <!-- Column A -->
+          <div
+            class="col-lg-6"
+            data-animate="fadeInRight"
+            data-animate-delay="400"
+          >
+            <div
+              class="p-4 rounded-16 bg-white h-100 services-card"
+              data-key="colA"
+              style="
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                max-height: 60vh;
+                overflow-y: auto;
+              "
+            >
+              <div
+                class="d-flex justify-content-between align-items-center gap-2 mb-3"
+              >
+                <h3 class="fs-5 text-dark fw-semibold">
+                  اكثر الخدمات طلباً (بيانات جديدة)
+                </h3>
+                <select
+                  class="w-25 py-2 px-3 bg-white border clr-primary period-select"
+                >
+                  <option value="الشهر">الشهر</option>
+                  <option value="الأسبوع">الأسبوع</option>
+                  <option value="اليوم">اليوم</option>
+                </select>
+              </div>
+
+              <ul class="row gy-4 services-list">
+                <!-- JS will render items here -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column B -->
+          <div
+            class="col-lg-6"
+            data-animate="fadeInLeft"
+            data-animate-delay="400"
+          >
+            <div
+              class="p-4 rounded-16 bg-white h-100 services-card"
+              data-key="colB"
+              style="
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                max-height: 60vh;
+                overflow-y: auto;
+              "
+            >
+              <div
+                class="d-flex justify-content-between align-items-center gap-2 mb-3"
+              >
+                <h3 class="fs-5 text-dark fw-semibold">
+                  اكثر الخدمات طلباً (بيانات جديدة)
+                </h3>
+                <select
+                  class="w-25 py-2 px-3 bg-white border clr-primary period-select"
+                >
+                  <option value="الشهر">الشهر</option>
+                  <option value="الأسبوع">الأسبوع</option>
+                  <option value="اليوم">اليوم</option>
+                </select>
+              </div>
+
+              <ul class="row gy-4 services-list">
+                <!-- JS will render items here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // ---- Dummy data for each column & period ----
+          const DATA = {
+            colA: {
+              الشهر: [
+                {
+                  title: "خدمة تنظيف المنزل بالكامل",
+                  price: 500,
+                  img: "../assets/images/pic-11.png",
+                  orders: 280,
+                },
+                {
+                  title: "غسيل سجاد ومفروشات",
+                  price: 320,
+                  img: "../assets/images/pic-12.png",
+                  orders: 210,
+                },
+              ],
+              الأسبوع: [
+                {
+                  title: "تنظيف غرف النوم",
+                  price: 220,
+                  img: "../assets/images/pic-12.png",
+                  orders: 75,
+                },
+                {
+                  title: "تنظيف صالات المعيشة",
+                  price: 240,
+                  img: "../assets/images/pic-11.png",
+                  orders: 69,
+                },
+                {
+                  title: "تنظيف حمّامات",
+                  price: 180,
+                  img: "../assets/images/pic-14.png",
+                  orders: 58,
+                },
+                {
+                  title: "تنظيف شُرفات",
+                  price: 150,
+                  img: "../assets/images/pic-13.png",
+                  orders: 44,
+                },
+              ],
+              اليوم: [
+                {
+                  title: "تنظيف سريع للمطبخ",
+                  price: 160,
+                  img: "../assets/images/pic-15.png",
+                  orders: 18,
+                },
+                {
+                  title: "تنظيف أرضيات",
+                  price: 140,
+                  img: "../assets/images/pic-16.png",
+                  orders: 15,
+                },
+                {
+                  title: "إزالة غبار عام",
+                  price: 120,
+                  img: "../assets/images/pic-11.png",
+                  orders: 12,
+                },
+              ],
+            },
+            colB: {
+              الشهر: [
+                {
+                  title: "صيانة سباكة منزلية",
+                  price: 550,
+                  img: "../assets/images/pic-13.png",
+                  orders: 195,
+                },
+                {
+                  title: "صيانة كهرباء بسيطة",
+                  price: 420,
+                  img: "../assets/images/pic-14.png",
+                  orders: 171,
+                },
+              ],
+              الأسبوع: [
+                {
+                  title: "فحص كهربائي شامل",
+                  price: 350,
+                  img: "../assets/images/pic-15.png",
+                  orders: 62,
+                },
+                {
+                  title: "تسليك مجاري",
+                  price: 300,
+                  img: "../assets/images/pic-16.png",
+                  orders: 56,
+                },
+                {
+                  title: "تصليح تسريبات بسيطة",
+                  price: 270,
+                  img: "../assets/images/pic-13.png",
+                  orders: 49,
+                },
+              ],
+              اليوم: [
+                {
+                  title: "تركيب مفتاح كهرباء",
+                  price: 90,
+                  img: "../assets/images/pic-14.png",
+                  orders: 11,
+                },
+                {
+                  title: "تبديل خراطيم",
+                  price: 80,
+                  img: "../assets/images/pic-12.png",
+                  orders: 9,
+                },
+              ],
+            },
+          };
+
+          // ---- Utilities ----
+          const formatPrice = (num) =>
+            `${Number(num).toLocaleString("ar-EG", {
+              maximumFractionDigits: 0,
+            })} جنيهاً`;
+
+          function createItemHTML(item) {
+            const { title, price, img, orders } = item;
+            const safeImg = img || "https://via.placeholder.com/64";
+            return `
+      <li class="d-flex justify-content-between align-items-center gap-2">
+        <div class="d-flex align-items-center gap-3">
+          <figure class="rounded-4 overflow-hidden" style="height:4rem;width:4rem;flex-shrink:0">
+            <img src="${safeImg}" alt="Pic" loading="lazy" class="cover" style="height:100%;width:100%;object-fit:cover;" />
+          </figure>
+          <div>
+            <h4 class="fs-6 text-dark fw-semibold">${title}</h4>
+            <p class="clr-gray-2" style="font-size:14px">${formatPrice(
+              price
+            )}</p>
+          </div>
+        </div>
+        <div>
+          <p class="clr-gray-2 fw-medium fs-6">${orders} عملية طلب</p>
+        </div>
+      </li>`;
+          }
+
+          function renderList(containerEl, period) {
+            const key = containerEl.dataset.key; // "colA" | "colB"
+            const listEl = containerEl.querySelector(".services-list");
+            const dataset = (DATA[key] && DATA[key][period]) || [];
+
+            if (!dataset.length) {
+              listEl.innerHTML = `
+        <li class="text-center py-4 clr-gray-2">لا توجد بيانات لهذا النطاق الزمني.</li>
+      `;
+              return;
+            }
+
+            listEl.innerHTML = dataset.map(createItemHTML).join("");
+          }
+
+          // ---- Init: bind each select to its own card ----
+          document.querySelectorAll(".services-card").forEach((card) => {
+            const select = card.querySelector(".period-select");
+
+            // Initial render using current select value
+            renderList(card, select.value);
+
+            // Keep each column independent
+            select.addEventListener("change", (e) => {
+              renderList(card, e.target.value);
+            });
+          });
+        </script>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/dashboard/dashb.js"></script>
+    <script src="../assets/js/dashboard/chart.js"></script>
+  </body>
+</html>
