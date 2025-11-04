@@ -313,6 +313,9 @@ canvas {
   vertical-align: middle;
   padding: 1rem 0.8rem;
   background-color: #ffffff;
+}
+
+#sortableTable .table-body tr:not(:last-child) td {
   border-bottom: 1px solid #dcdcdcd9;
 }
 
